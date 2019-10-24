@@ -25,8 +25,8 @@ body, html {
 }
 
 header button {
-  background-color: #005730; /* Green background */
-  border: 1px solid #00331c; /* Green border */
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
   color: white; /* White text */
   padding: 10px 24px; /* Some padding */
   margin: 10px;
@@ -57,7 +57,7 @@ a:hover {
 }
 
 /* ------------------------------------ */
-h1 {margin-top:20px; margin-bottom:20px; color: rgb(235, 235, 235);}
+h1 {margin-top:20px; margin-bottom:20px;}
 h2,h3,h4,h5,h6 {margin: 0px;}
 
 p {margin: 0px;}
@@ -121,7 +121,7 @@ iframe {
 .container-table100 {
   width: 100%;
   min-height: 100vh;
-  background: rgb(12, 12, 12);
+  background: rgb(111, 151, 224);
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -141,7 +141,7 @@ iframe {
 table {
   border-spacing: 1;
   border-collapse: collapse;
-  background: #222222;
+  background: white;
   border-radius: 10px;
   overflow: hidden;
   width: 100%;
@@ -156,7 +156,7 @@ table td, table th {
 }
 table thead tr {
   height: 60px;
-  background: #353535;
+  background: #36304a;
 }
 table tbody tr {
   height: 50px;
@@ -181,23 +181,28 @@ table td.r, table th.r {
 .table100-head th{
   font-family: OpenSans-Regular;
   font-size: 18px;
-  color: #00ad5f;
+  color: #fff;
   line-height: 1.2;
   font-weight: unset;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #444444;
+  background-color: #f5f5f5;
 }
 
 tbody tr {
   font-family: OpenSans-Regular;
   font-size: 15px;
-  color: rgb(235, 235, 235);
+  color: #808080;
   line-height: 1.2;
   font-weight: unset;
 }
 
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
 
 .column1 {
   width: 260px;
@@ -230,11 +235,6 @@ tbody tr {
 
 
 @media screen and (max-width: 992px) {
-
-  header button {
-    width:90%;
-  }
-
   table {
     display: block;
   }
