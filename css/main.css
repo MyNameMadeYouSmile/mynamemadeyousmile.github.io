@@ -57,7 +57,7 @@ a:hover {
 }
 
 /* ------------------------------------ */
-h1 {margin-top:20px; margin-bottom:20px; color: rgb(235, 235, 235);}
+h1 {margin-bottom:20px; color: rgb(235, 235, 235);}
 h2,h3,h4,h5,h6 {margin: 0px;}
 
 p {margin: 0px;}
@@ -128,7 +128,6 @@ iframe {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   padding: 33px 30px;
@@ -147,6 +146,7 @@ table {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  margin-top: 10px;
 }
 table * {
   position: relative;
@@ -200,32 +200,38 @@ tbody tr {
 
 
 .column1 {
-  width: 260px;
-  padding-left: 40px;
+  width: 170px;
+  padding-left: 20px;
+  text-align: center;
 }
 
 .column2 {
-  width: 160px;
+  padding:15px;
+  width: 300px;
 }
 
 .column3 {
-  width: 245px;
+  width: 300px;
 }
 
 .column4 {
   width: 110px;
-  text-align: right;
+  text-align: left;
 }
 
 .column5 {
-  width: 170px;
+  width: 140px;
   text-align: right;
+  padding-right: 30px;
 }
 
-.column6 {
-  width: 222px;
-  text-align: right;
-  padding-right: 62px;
+select {
+  background-color: #444444;
+  color: rgb(235, 235, 235);
+}
+
+p {
+  text-align: left;
 }
 
 
@@ -267,22 +273,19 @@ tbody tr {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "Date";
-  }
-  table tbody tr td:nth-child(2):before {
-    content: "Order ID";
-  }
-  table tbody tr td:nth-child(3):before {
     content: "Name";
   }
+  table tbody tr td:nth-child(2):before {
+    content: "Synopsis";
+  }
+  table tbody tr td:nth-child(3):before {
+    content: "Tags";
+  }
   table tbody tr td:nth-child(4):before {
-    content: "Price";
+    content: "Fills";
   }
   table tbody tr td:nth-child(5):before {
-    content: "Quantity";
-  }
-  table tbody tr td:nth-child(6):before {
-    content: "Total";
+    content: "Genre";
   }
 
   .column4,
