@@ -264,7 +264,7 @@
     table tbody tr td:before {
       font-family: OpenSans-Regular;
       font-size: 14px;
-      color: #999999;
+      color: rgb(40, 40, 40);
       line-height: 1.2;
       font-weight: unset;
       position: absolute;
