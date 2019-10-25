@@ -177,6 +177,10 @@ table td.r, table th.r {
   text-align: center;
 }
 
+table a {
+  color: rgb(77, 175, 255);
+}
+
 
 .table100-head th{
   font-family: OpenSans-Regular;
@@ -237,8 +241,13 @@ p {
 
 @media screen and (max-width: 992px) {
 
+  body {
+    background: rgb(12, 12, 12);
+  }
+
   header button {
     width:89%;
+    position: relative;
   }
 
   table {
@@ -288,10 +297,12 @@ p {
     content: "Genre";
   }
 
+  .column1,
   .column4,
   .column5,
   .column6 {
     text-align: left;
+    padding-left:0;
   }
 
   .column4,
