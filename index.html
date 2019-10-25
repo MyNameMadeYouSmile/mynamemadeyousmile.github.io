@@ -62,6 +62,24 @@
 					localStorage['mode'] = 'dark';
 					button.innerHTML = "Light Mode";
 				}
+
+				$('td').each(function () {
+					$(this).html(
+						$(this).html()
+							.replace(
+								/(?<!-)(\[\brape\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+							.replace(
+								/(?<!-)(\[\bage\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+							.replace(
+								/(?<!-)(\[\bbeast\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+					);
+				});
 			}
 
 			var LightTableFilter = (function (Arr) {
@@ -111,7 +129,6 @@
 				}
 			});
 
-
 		})(document);
 
 	</script>
@@ -122,13 +139,25 @@
 				<h1>AngelMain's Scripts</h1>
 				<select class="light-table-filter" data-table="order-table" placeholder="Filter">
 					<option value="">Everything</option>
-					<option value="None yet">Unfilled</option>
-					<option value="Real World">Real World</option>
-					<option value="Fantasy/Sci-Fi">Fantasy/Sci-Fi</option>
-					<optgroup label="Monster Girls">
-						<option value="Monster Girls">All Monster Girls</option>
+					<option value="None yet">Unfilled Only</option>
+					<optgroup label="By Category">
+						<option value="Monster Girls">Monster Girls</option>
+						<option value="Fantasy/Sci-Fi">Fantasy/Sci-Fi</option>
+						<option value="Real World">Real World</option>
+						<option value="Romantic">Romantic</option>
+						<option value="Story Heavy">Story Heavy</option>
+					</optgroup>
+					<optgroup label="By Series">
 						<option value="MonsterWife">MonsterWife Series</option>
 						<option value="Monster College">Monster College</option>
+						<option value="Sword and Sorcery">Sword and Sorcery</option>
+					</optgroup>
+					<optgroup label="By Common Tags">
+						<option value="Friends to Lovers">Friends to Lovers</option>
+						<option value="Fdom">Fdom</option>
+						<option value="Nerdy">Nerdy</option>
+						<option value="Emotional">Emotional</option>
+						<option value="Creampie">Creampie</option>
 					</optgroup>
 				</select>
 				<div class="table100">
@@ -139,7 +168,7 @@
 								<th class="column2">Synopsis</th>
 								<th class="column3">Tags</th>
 								<th class="column4">Fills</th>
-								<th class="column5">Genre</th>
+								<th class="column5">Category</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -171,7 +200,7 @@
 										you and your life is over, but... Is that really what she wants?</p>
 								</td>
 								<td class="column3">
-									<p>[Monster Girl][Onryō][Ghost][Spooky][Crying][Lots of Feels][Very dark past,
+									<p>[Monster Girl][Onryō][Ghost][Spooky][Crying][Emotional][Very dark past,
 										please see note inside] but also surprisingly
 										[Vanilla][Sweet][Loving][Kissing][Two Endings]</p>
 								</td>
@@ -189,7 +218,8 @@
 										Monster College Halloween Party</a> </td>
 								<td class="column2">
 									<p>You're still getting used to being the all-monster
-										college, and feel a bit out of place during Halloween, but your night suddenly takes a very
+										college, and feel a bit out of place during Halloween, but your night suddenly
+										takes a very
 										interesting
 										turn when you encounter a naughty angel, an elegant sphinx and a shy slime. In a
 										crazy turn of events now you have three sexy monster girls
@@ -241,7 +271,7 @@
 										explore sexuality for the first time together.</p>
 								</td>
 								<td class="column3">
-									<p>[WoW][Guildies Meeting IRL][Friends to
+									<p>[WoW][Guildies Meeting IRL][Nerdy][Friends to
 										Lovers][Confession][L-bombs][Shy][Tsundere][Vanilla][Outercourse][Creampie]</p>
 								</td>
 								<td class="column4"><a
@@ -558,10 +588,13 @@
 										href="https://www.reddit.com/r/gonewildaudio/comments/bz18tm/script_offerf4m_best_game_ever_dungeon">[F4M]
 										Best Game Ever</a> </td>
 								<td class="column2">
-									<p>Shy dungeon master confesses her feelings for her best friend with a special session and a lot of D&D pick up lines, and then shows him her naughty side. Who said dorkiness can't be sexy too?</p>
+									<p>Shy dungeon master confesses her feelings for her best friend with a special
+										session and a lot of D&D pick up lines, and then shows him her naughty side. Who
+										said dorkiness can't be sexy too?</p>
 								</td>
 								<td class="column3">
-									<p>[Dungeon Master][Friends to Lovers][Confession][Playful][Nerdy][Adorkable]LOTS of[D&D References][Shy]to[Slutty][Grinding][Riding][Blowjob]</p>
+									<p>[Dungeon Master][Friends to Lovers][Confession][Playful][Nerdy][Adorkable]LOTS
+										of[D&D References][Shy]to[Slutty][Grinding][Riding][Blowjob]</p>
 								</td>
 								<td class="column4"><a
 										href="https://www.reddit.com/r/gonewildaudio/comments/bzwrqd/f4mscript_fill_best_game_ever_dungeon">BraveryAudios</a>
@@ -573,10 +606,14 @@
 										href="https://www.reddit.com/r/gonewildaudio/comments/bxadrs/script_offerf4m_sword_and_sorcery">[F4M]
 										Sword and Sorcery</a> </td>
 								<td class="column2">
-									<p>An adventuring party is preparing to fight the evil Red Dragon. The fighter has a secret she's been keeping this whole time: she's in love with the small and charming wizard that has been her companion for so long. She is afraid, but decides she needs to tell this to him before it's too late.</p>
+									<p>An adventuring party is preparing to fight the evil Red Dragon. The fighter has a
+										secret she's been keeping this whole time: she's in love with the small and
+										charming wizard that has been her companion for so long. She is afraid, but
+										decides she needs to tell this to him before it's too late.</p>
 								</td>
 								<td class="column3">
-									<p>[FemKnight][Size difference][Switch][Fantasy][Romance][Sex Magic][Blowjob][Spanking][L-bombs][Creampie][Aftercare]</p>
+									<p>[FemKnight][Size difference][Switch][Fantasy][Romance][Sex
+										Magic][Blowjob][Spanking][L-bombs][Creampie][Aftercare]</p>
 								</td>
 								<td class="column4"><a
 										href="https://www.reddit.com/r/gonewildaudio/comments/c8nsjx/f4m_sword_and_sorcery_script_fill_femknightsize">JayeWilde</a>
@@ -591,10 +628,14 @@
 										href="https://www.reddit.com/r/gonewildaudio/comments/bvrn9w/script_offerf4m_or_ff4m_awaken_friends_to">[F4M]
 										Awaken</a> </td>
 								<td class="column2">
-									<p>A guy has been having a crush for his best friend for a long time. After confessing, he discovers that she is secretly a succubus that still didn't complete her transformation. Her body and her personality change a lot after finishing the ritual, but he still likes her no matter what.</p>
+									<p>A guy has been having a crush for his best friend for a long time. After
+										confessing, he discovers that she is secretly a succubus that still didn't
+										complete her transformation. Her body and her personality change a lot after
+										finishing the ritual, but he still likes her no matter what.</p>
 								</td>
 								<td class="column3">
-									<p>[Friends to Lovers][Succubus][Breast and Ass Expansion][Personality Switch][Petite and Shy]to[Voluptuous and Seductive][Acceptance][Aftercare]</p>
+									<p>[Friends to Lovers][Succubus][Breast and Ass Expansion][Personality
+										Switch][Petite and Shy]to[Voluptuous and Seductive][Acceptance][Aftercare]</p>
 								</td>
 								<td class="column4"><a
 										href="https://www.reddit.com/r/gonewildaudio/comments/czqujk/f4m_awaken_friends_to_loverssuccubusbreast_and">anonelin</a>
@@ -606,40 +647,48 @@
 										href="https://www.reddit.com/r/gonewildaudio/comments/btguda/f4mscript_offer_fear_of_the_dark">[F4M]
 										Fear Of The Dark</a> </td>
 								<td class="column2">
-									<p>A girl that has been bullied for being the "weird kid" in high school finally reunites with her boyfriend of that time after she had to live in other state. She is very different and has developed a lot since then, but her feelings for him are still the same.</p>
+									<p>A girl that has been bullied for being the "weird kid" in high school finally
+										reunites with her boyfriend of that time after she had to live in other state.
+										She is very different and has developed a lot since then, but her feelings for
+										him are still the same.</p>
 								</td>
 								<td class="column3">
-									<p>[Mysterious][Monster girl][In the darkness][Gentle Fdom][Playful][Cuddling][Claws][Tailjob][Riding][Creampie]</p>
+									<p>[Mysterious][Monster girl][In the darkness][Gentle
+										Fdom][Playful][Cuddling][Claws][Tailjob][Riding][Creampie]</p>
 								</td>
 								<td class="column4"><a
 										href="https://www.reddit.com/r/gonewildaudio/comments/c83j6a/f4mfear_of_the_dark_scriptfillmysteriousmonster">Hou_bi</a>
 									<br><br>
 									<a
 										href="https://www.reddit.com/r/gonewildaudio/comments/cueavl/f4m_script_fill_fear_of_the_dark_mysterious">HannahSlamma</a>
-										<br><br>
-										<a
-											href="https://www.reddit.com/r/gonewildaudio/comments/cpljmo/f4m_fear_of_the_dark_monster_girl_mysterious_in">HanulSkyGirl</a>
+									<br><br>
+									<a
+										href="https://www.reddit.com/r/gonewildaudio/comments/cpljmo/f4m_fear_of_the_dark_monster_girl_mysterious_in">HanulSkyGirl</a>
 								</td>
 								<td class="column5">Monster Girls</td>
 							</tr>
 							<tr>
-									<td class="column1"><a
-											href="https://www.reddit.com/r/gonewildaudio/comments/bpfwya/script_offerf4m_a_matter_of_life_and_death">[F4M]
-											A Matter Of Life And Death</a> </td>
-									<td class="column2">
-										<p>A paladin finally finds and confronts the evil Lich he's been hunting for years, but he finds out that she is not the monster he was looking for. Actually, she really only needs some love and cuddles.</p>
-									</td>
-									<td class="column3">
-										<p>[Fantasy][F Necromancer vs M Paladin][Enemies to Lovers][Emotional][Shy][Virgin][Vanilla][Playful][Cunnilingus][Riding][Swallowing][Aftercare]</p>
-									</td>
-									<td class="column4"><a
-											href="https://www.reddit.com/r/gonewildaudio/comments/c4v0es/f4m_a_matter_of_life_and_death_fantasyenemies_to">MistressIrene</a>
-										<br><br>
-										<a
-											href="https://www.reddit.com/r/gonewildaudio/comments/ckkuzr/f4m_a_matter_of_life_and_death_fantasyenemies_to">FaintHeart19</a>
-									</td>
-									<td class="column5">Fantasy/Sci-Fi</td>
-								</tr>
+								<td class="column1"><a
+										href="https://www.reddit.com/r/gonewildaudio/comments/bpfwya/script_offerf4m_a_matter_of_life_and_death">[F4M]
+										A Matter Of Life And Death</a> </td>
+								<td class="column2">
+									<p>A paladin finally finds and confronts the evil Lich he's been hunting for years,
+										but he finds out that she is not the monster he was looking for. Actually, she
+										really only needs some love and cuddles.</p>
+								</td>
+								<td class="column3">
+									<p>[Fantasy][F Necromancer vs M Paladin][Enemies to
+										Lovers][Emotional][Shy][Virgin][Vanilla][Playful][Cunnilingus][Riding][Swallowing][Aftercare]
+									</p>
+								</td>
+								<td class="column4"><a
+										href="https://www.reddit.com/r/gonewildaudio/comments/c4v0es/f4m_a_matter_of_life_and_death_fantasyenemies_to">MistressIrene</a>
+									<br><br>
+									<a
+										href="https://www.reddit.com/r/gonewildaudio/comments/ckkuzr/f4m_a_matter_of_life_and_death_fantasyenemies_to">FaintHeart19</a>
+								</td>
+								<td class="column5">Fantasy/Sci-Fi</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
