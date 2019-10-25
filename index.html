@@ -30,18 +30,36 @@
 		(function (document) {
 			'index.html';
 
-			var mode = "dark";
+			var mode = localStorage['mode'];
 
 			function swapStyleSheet(button) {
 				if (mode == "dark") {
 					document.getElementById("pagestyle").setAttribute("href", "css/mainlight.css");
 					mode = "light";
+					localStorage['mode'] = 'light';
 					button.innerHTML = "Dark Mode";
 				}
 
 				else if (mode == "light") {
 					document.getElementById("pagestyle").setAttribute("href", "css/main.css");
 					mode = "dark";
+					localStorage['mode'] = 'dark';
+					button.innerHTML = "Light Mode";
+				}
+			}
+
+			function keepStyleSheet(button) {
+				if (mode == "light") {
+					document.getElementById("pagestyle").setAttribute("href", "css/mainlight.css");
+					mode = "light";
+					localStorage['mode'] = 'light';
+					button.innerHTML = "Dark Mode";
+				}
+
+				else if (mode == "dark") {
+					document.getElementById("pagestyle").setAttribute("href", "css/main.css");
+					mode = "dark";
+					localStorage['mode'] = 'dark';
 					button.innerHTML = "Light Mode";
 				}
 			}
@@ -79,14 +97,25 @@
 				if (document.readyState === 'complete') {
 					LightTableFilter.init();
 					var a = document.getElementById("modechange");
-					a.innerHTML = "Light Mode"
+					a.innerHTML = "Light Mode";
 					a.onclick = function () { swapStyleSheet(this); };
+
+					if (mode != "dark" && mode != "light") {
+						mode = "dark";
+						localStorage['mode'] = 'dark';
 				}
-			});
+
+				keepStyleSheet(a);
+
+
+			}
+		});
+
 
 		})(document);
+	
 	</script>
-	<header><button name=modechange id="modechange"></button></header>
+	<header><button name="modechange" id="modechange"></button></header>
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -111,8 +140,7 @@
 						<tbody>
 							<tr>
 								<td class="column1"><a
-										href=https://www.reddit.com/r/GWAScriptGuild/comments/dm742a/script_offerf4m_always_in_my_head_monster>[F4M]
-										Always In My Head</a> </td> <td class="column2">
+										href="https://www.reddit.com/r/GWAScriptGuild/comments/dm742a/script_offerf4m_always_in_my_head_monster">[F4M]Always In My Head</a> </td> <td class="column2">
 										<p>Your Dullahan best friend has been acting a little weird lately, very...
 											Tsundere. Her head isn't brave enough to confess her feelings for you, but
 											her body has different plans.</p>
@@ -126,7 +154,7 @@
 							</tr>
 							<tr>
 								<td class="column1"><a
-										href=https://www.reddit.com/r/gonewildaudio/comments/dhxprz/script_offerf4m_i_will_follow_you_into_the_dark>[F4M]
+										href="https://www.reddit.com/r/gonewildaudio/comments/dhxprz/script_offerf4m_i_will_follow_you_into_the_dark">[F4M]
 										I Will Follow You Into The Dark</a> </td> <td class="column2">
 										<p>You arrive at home after a fairly normal day, but something feels a little
 											odd. All the lights are off, even though you remember leaving them on, and
