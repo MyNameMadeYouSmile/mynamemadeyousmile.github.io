@@ -296,6 +296,14 @@ p {
   table tbody tr td:nth-child(5):before {
     content: "Genre";
   }
+  
+  .column1 {
+    padding-top: 10px;
+  }
+
+  .column5 {
+    padding-bottom: 10px;
+  }
 
   .column1,
   .column4,
