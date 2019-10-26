@@ -99,7 +99,11 @@
       border: none !important;
   }
   
-  
+  footer {
+  background-color: rgb(171, 214, 255);
+  text-align: center;
+  color: rgb(40, 40, 40);;
+}
   
   
   /*//////////////////////////////////////////////////////////////////
