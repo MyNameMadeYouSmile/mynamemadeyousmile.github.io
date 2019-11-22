@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>AngelMain's Scripts</title>
+	<title>AngelMain's NSFW Scripts</title> <!-- Change this to your username -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -25,14 +25,16 @@
 	<!--===============================================================================================-->
 </head>
 
+	<!-- Do not change anything inside the <head></head> tag other than the title. If you do, things will probably explode -->
+
 <body>
-	<script>
+	<script> // Script that creates all of the functional part of the page. Do not modify anything inside this tag unless you really know what you're doing
 		(function (document) {
 			'index.html';
 
-			var mode = localStorage['mode'];
+			var mode = localStorage['mode']; // Gets current light/dark setting
 
-			function swapStyleSheet(button) {
+			function swapStyleSheet(button) { // Swaps light/dark mode on button click
 				if (mode == "dark") {
 					document.getElementById("pagestyle").setAttribute("href", "css/mainlight.css");
 					mode = "light";
@@ -48,8 +50,8 @@
 				}
 			}
 
-			function keepStyleSheet(button) {
-				if (mode == "light") {
+			function keepStyleSheet(button) { // Decides if the site will be on light or dark theme depending on the previous setting
+				if (mode == "light") {		  
 					document.getElementById("pagestyle").setAttribute("href", "css/mainlight.css");
 					mode = "light";
 					localStorage['mode'] = 'light';
@@ -63,7 +65,7 @@
 					button.innerHTML = "Light Mode";
 				}
 
-				$('td').each(function () {
+				$('td').each(function () { // Marks Age, Beast and Rape tags as red. If you don't want this feature, delete everything from the $
 					$(this).html(
 						$(this).html()
 							.replace(
@@ -79,14 +81,15 @@
 								'<span style="color:#ff4747;">$1</span>'
 							)
 					);
-				});
+				}); // Until here. If you want to mark other tags as red too, add more replaces after the last one and switch the word between the /b's for
+				    // the one you want
 			}
 
 			var LightTableFilter = (function (Arr) {
 
 				var _input;
 
-				function _onInputEvent(e) {
+				function _onInputEvent(e) { // A lot of stuff to make the table filter work
 					_input = e.target;
 					var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
 					Arr.forEach.call(tables, function (table) {
@@ -111,7 +114,7 @@
 				};
 			})(Array.prototype);
 
-			document.addEventListener('readystatechange', function () {
+			document.addEventListener('readystatechange', function () { // Adds table filter, event listeners and calls the initial page settings
 				if (document.readyState === 'complete') {
 					LightTableFilter.init();
 					var a = document.getElementById("modechange");
@@ -132,11 +135,12 @@
 		})(document);
 
 	</script>
-	<header><button name="modechange" id="modechange"></button></header>
+	<header><div id="topbuttons"><button name="modechange" id="modechange"></button><br>
+		<a href=indexscripts.html><button name="scriptsoraudios" id="scriptsoraudios">SFW</button></a></div></header>
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
-				<h1>AngelMain's Scripts</h1>
+				<h1>AngelMain's NSFW Scripts</h1>
 				<select class="light-table-filter" data-table="order-table" placeholder="Filter">
 					<option value="">Everything</option>
 					<option value="None yet">Unfilled Only</option>
@@ -160,607 +164,626 @@
 					</optgroup>
 				</select>
 				<div class="table100">
-					<table class="order-table">
-						<thead>
-							<tr class="table100-head">
-								<th class="column1">Name</th>
-								<th class="column2">Synopsis</th>
-								<th class="column3">Tags</th>
-								<th class="column4">Fills</th>
-								<th class="column5">Categories</th>
-							</tr>
-						</thead>
-						<tbody>
-								<tr>
-										<td class="column1"><a
-												href="https://www.reddit.com/r/gonewildaudio/comments/dwfsiv/script_offerf4m_my_chemical_romance/">[F4M]
-												My Chemical Romance</a> </td>
-										<td class="column2">
-											<p>Socially awkward alchemist brings her boyfriend to her lab for the first time and
-												tries to make a confession. She ends up drinking a love potion by accident, and
-												since she already loved him before, the effects of the potion turn out to be very, very interesting for both of them.
-											</p>
-										</td>
-										<td class="column3">
-											<p>[Fantasy][Alchemist][Girlfriend][Sweet][Potion Mishap][Awkward]to[Desperate][Blowjob][Fingering][Creampie][Aphrodisiac] so technically [Rape]?</p>
-										</td>
-										<td class="column4"><a href="https://www.reddit.com/r/gonewildaudio/comments/dyqs5w/f4m_my_chemical_romance_script_fill_fantasy/">allusions_of</a></td>
-										<td class="column5">Fantasy/Sci-Fi, Romantic</td>
-									</tr>
-								<tr>
-										<td class="column1"><a
-												href="https://www.reddit.com/r/gonewildaudio/comments/duw456/script_offerf4m_monsterwife_series_the_dog_girl/">[F4M]
-												MonsterWife Series: The Dog Girl</a> </td>
-										<td class="column2">
-											<p>You and your loyal and loving canine wife finally decided to have babies! Because of this, she stopped taking her heat control medicine so the chances of pregnancy are increased. However... After repressing it for so long, her heat came in <i>very</i> strong this time around. And she is going to beg you to breed her if she has to.</p>
-										</td>
-										<td class="column3">
-											<p>[Monster Girl][Urban Fantasy][GFE/Wife][Sweet][Planned Pregnancy] but also [In Heat][Begging][Rough][Breeding][Spaking][Creampie][Aftercare]</p>
-										</td>
-										<td class="column4">None yet</td>
-										<td class="column5">Monster Girls, Romantic</td>
-									</tr>
+				<table class="order-table">
+					<thead>
+						<tr class="table100-head">
+							<th class="column1">Name</th>
+							<th class="column2">Synopsis</th>
+							<th class="column3">Tags</th>
+							<th class="column4">Fills</th>
+							<th class="column5">Categories</th>
+						</tr>
+					</thead>
+					<tbody>
 							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dsmni2/script_offerf4m_love_and_load_scifibattle/">[F4M]
-										Love and Load</a> </td>
-								<td class="column2">
-									<p>You're a young scientist who just managed to save enough credits to buy
-										your own lab. One day you go to the old storage room to do some cleaning and
-										find someone down there. A girl. Or at least... Something similar. She's a
-										hybrid between a human and a machine, and she was completely abandoned by
-										whoever owned the lab before you. You decide to take care of that girl, and you
-										both find out that love can bloom in the unlikeliest of situations.</p>
-								</td>
-								<td class="column3">
-									<p>[Sci-Fi][Battle Cyborg][Failed Prototype][Finds a Loving Master][Emotional][Sweetness Overflow][Kissing][Virgin][Vanilla][L-bombs][Creampie]</p>
-								</td>
-								<td class="column4">None yet</td>
-								<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
-							</tr>
+									<td class="column1"><a
+											href="https://www.reddit.com/r/gonewildaudio/comments/dy8iib/script_offerf4m_dorks_should_stick_together/">[F4M]
+											Dorks Should Stick Together</a> </td>
+									<td class="column2">
+										<p>These two dorky nerds have been best friends for years. One day though, the girl reveals that she never kissed anyone before, and she was jealous of him. It turns out to be quite the misunderstanding though, as he never did either, so they decide to take care of this issue together. And while they're at it, why not have other first times too, right?
+										</p>
+									</td>
+									<td class="column3">
+										<p>[Friends to Lovers][Adorably Awkward][Sorry for being jealous][Confession][First Kiss][Virgins][Slow Buildup][Grinding][Bent Over][Creampie]</p>
+									</td>
+									<td class="column4"><a href="https://www.reddit.com/r/gonewildaudio/comments/dyf8wl/f4m_dorks_should_stick_together_friends_to/">BBW_Girlie</a>
+									<br><br><a href="https://www.reddit.com/r/gonewildaudio/comments/dyfd6j/f4m_dorks_should_stick_together_friends_to/">orosethouartsick	</a></td>
+									<td class="column5">Real World, Romantic</td>
+								</tr>
 							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/drm9cb/script_offerf4m_the_white_queens_suitor/">[F4M]
-										The White Queen's Suitor</a> </td>
-								<td class="column2">
-									<p>You are a farm boy coming from a very humble background. After you reached
-										adulthold, your parents found out that the White Queen of the Snowlands is
-										hosting a contest to find a new husband, and they spend all of their savings to
-										send you there. After all their efforts you couldn't just refuse it. Deep down
-										inside you're afraid, but it turns out you and the queen might find out a lot
-										more about each other — and yourselves — than you initially expected.</p>
-								</td>
-								<td class="column3">
-									<p>[Fantasy][Queen and Farm Boy][Sweet][Gentle Fdom][Magic][Inexperienced
-										Guy][Finding out her dommy side][69][Riding][Creampie][Aftercare][Collab]</p>
-								</td>
-								<td class="column4"><a herf="https://www.reddit.com/r/gonewildaudio/comments/dv1irr/the_white_queens_suitor_script_fill_f4m_fantasy/">kitten_dreams</a></td>
-								<td class="column5">Fantasy/Sci-Fi, Romantic</td>
-							</tr>
+									<td class="column1"><a
+											href="https://www.reddit.com/r/gonewildaudio/comments/dwfsiv/script_offerf4m_my_chemical_romance/">[F4M]
+											My Chemical Romance</a> </td>
+									<td class="column2">
+										<p>Socially awkward alchemist brings her boyfriend to her lab for the first time and
+											tries to make a confession. She ends up drinking a love potion by accident, and
+											since she already loved him before, the effects of the potion turn out to be very, very interesting for both of them.
+										</p>
+									</td>
+									<td class="column3">
+										<p>[Fantasy][Alchemist][Girlfriend][Sweet][Potion Mishap][Awkward]to[Desperate][Blowjob][Fingering][Creampie][Aphrodisiac] so technically [Rape]?</p>
+									</td>
+									<td class="column4"><a href="https://www.reddit.com/r/gonewildaudio/comments/dyqs5w/f4m_my_chemical_romance_script_fill_fantasy/">allusions_of</a></td>
+									<td class="column5">Fantasy/Sci-Fi, Romantic</td>
+								</tr>
 							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/GWAScriptGuild/comments/dm742a/script_offerf4m_always_in_my_head_monster">[F4M]
-										Always
-										In My Head</a> </td>
-								<td class="column2">
-									<p>Your Dullahan best friend has been acting a little weird lately, very...
-										Tsundere. Her head isn't brave enough to confess her feelings for you, but
-										her body has different plans.</p>
-								</td>
-								<td class="column3">
-									<p>[Monster Girl][Dullahan][Friends to Lovers][Tsundere][Sweet][Body Betrayal...
-										Literally][Grinding][Blowjob][Facesitting][Doggy][Creampie][Aftercare]</p>
-								</td>
-								<td class="column4">None yet</td>
-								<td class="column5">Monster Girls, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dhxprz/script_offerf4m_i_will_follow_you_into_the_dark">[F4M]
-										I Will Follow You Into The Dark</a> </td>
-								<td class="column2">
-									<p>You arrive at home after a fairly normal day, but something feels a little
-										odd. When suddenly, you see a creature
-										crawling from under your bed. You're sure you need to run before she gets to
-										you and your life is over, but... Is that really what she wants?</p>
-								</td>
-								<td class="column3">
-									<p>[Monster Girl][Onryō][Ghost][Spooky][Crying][Emotional][Very dark past,
-										please see note inside] but also surprisingly
-										[Vanilla][Sweet][Loving][Kissing][Two Endings]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dielza/script_fillf4m_i_will_follow_you_into_the_dark">RubySeaWitch</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dieafh/script_fill_f4m_i_will_follow_you_into_the_dark">SquirelFeed</a>
-								</td>
-								<td class="column5">Monster Girls, Story Heavy, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dep9ru/script_offerfff4m_monster_college_halloween_party">[FFF4M]
-										Monster College Halloween Party</a> </td>
-								<td class="column2">
-									<p>You're still getting used to being the all-monster
-										college, and feel a bit out of place during Halloween, but your night suddenly
-										takes a very
-										interesting
-										turn when you encounter a naughty angel, an elegant sphinx and a shy slime. In a
-										crazy turn of events now you have three sexy monster girls
-										thirsting over you - and each other. Not as bad as it initially seemed, is it?
-									</p>
-								</td>
-								<td class="column3">
-									<p>[Monster Girls] in [Halloween Costumes][Angel Girl][Slime Girl][Sphinx
-										Girl][Foursome][Magic][Multiple Orgasms][Lots of Creampies][More Tags Inside]
-									</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dk1cn6/fff4m_fff4a_monster_college_halloween_party">HannahSlamma,
-										HandInMyCookieJar and black_mamba866</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dnfpu8/fff4m_monster_girl_college_party_monster_girls_in">garden_slumber,
-										RuthieRen and fieldsoflupine</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dpqfng/fff4m_monster_college_halloween_party_script_fill/">JayeWilde,
-										BraveryAudios and Xyta_Midnyte</a>
-								</td>
-								<td class="column5">Monster Girls</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/d55rec/script_offerf4m_monsterwife_series_the_vampire">[F4M]
-										MonsterWife Series: The Vampire</a> </td>
-								<td class="column2">
-									<p>This vampire girl gets home very tired from her night shift job, and also very
-										hungry. She doesn't really want to bother her husband asking to feed on him
-										after waking him up in the middle of the night, but since he cares about her
-										enough to offer that... She's gonna make sure to use her good little snack a
-										lot.</p>
-								</td>
-								<td class="column3">
-									<p>[Monster Girl][Urban Fantasy][GFE/Wife][Comforting][Feeding on you][Gentle
-										Fdom][Grinding][Riding][Creampie] slight [Bloodplay] because [Vampire]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dieant/f4m_monsterwife_series_the_vampire_monster">rinna_ml</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/djr90w/f4m_your_monsterwife_the_vampire_gwalloween">garden_slumber</a>
-								</td>
-								<td class="column5">Monster Girls, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/d1wtqj/script_offerf4m_make_love_not_warcraft">[F4M]
-										Make Love, Not Warcraft</a> </td>
-								<td class="column2">
-									<p>A guy and a girl who have been playing World of Warcraft together and been best
-										friends for years, and they are finally meeting in real life. When this happens,
-										though, their feelings for each other start surfacing, and they decide to
-										explore sexuality for the first time together.</p>
-								</td>
-								<td class="column3">
-									<p>[WoW][Guildies Meeting IRL][Nerdy][Friends to
-										Lovers][Confession][L-bombs][Shy][Tsundere][Vanilla][Outercourse][Creampie]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/d3dz84/f4m_make_love_not_warcraft_wowguildies_meeting">TheIttyBittyPrincess</a>
-								</td>
-								<td class="column5">Real World, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cyuz96/script_offerf4m_oni_senior_shows_whos_in_charge/?utm_medium=android_app&utm_source=share">[F4M]
-										Oni Senior Shows Who's In Charge</a> </td>
-								<td class="column2">
-									<p>Still very nervous in the new, all-monster college, you get welcomed by one of
-										the members of the student council, a friendly - albeit a bit cocky - Oni girl
-										that makes you look like a dwarf in comparison. She gives you an orientation
-										tour, but the tour ends up having an unexpected destination in the end: her
-										bedroom.</p>
-								</td>
-								<td class="column3">
-									<p>[Monster College][Oni Girl][Giant Woman][Size Difference][Fdom][Thicc][Big
-										Tits][Aggressive] but still [Consensual][Creampie]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/d7u2sc/f4m_oni_senior_shows_whos_in_charge_monster">MsVictoriaShine</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/czy95e/f4m_oni_senior_shows_whos_in_charge_monster">Vuhjeina</a>
-								</td>
-								<td class="column5">Monster Girls</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cwttgf/updatedscript_offerf4m_youre_the_best_around">[F4M]
-										You're The Best Around</a> </td>
-								<td class="column2">
-									<p>This tomboy girl always teases her best friend, sometimes in not so nice ways,
-										but secretely it's her way of trying to get his attention. She's never been good
-										at expressing her emotions, but discovers he has feelings for her as well...
-										After kicking his ass.</p>
-								</td>
-								<td class="column3">
-									<p>[Tsundere][Tomboy][Fighter][Frenemies to Lovers][Confession][FSub][Dd/lg] but [No
-										Age][Blowjob][Against the wall]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/d4vyaq/youre_the_best_around_script">kitten_dreams</a>
-								</td>
-								<td class="column5">Real World</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cvu2wb/script_offerfa4m_dont_panic_alien_girl_and_her">[FA4M]
-										Don't Panic!</a> </td>
-								<td class="column2">
-									<p>An alien girl crashes her personal exploration ship in the house of a human. His
-										initial reaction is being frightened, but after things calm down, he offers to
-										help her and they start getting together really well, in multiple ways. Her
-										feisty AI companion who loves to tease her master isn't so happy with that,
-										though.</p>
-								</td>
-								<td class="column3">
-									<p>[Sarcastic AI
-										Companion][Humor][Sweet][Adorkable][Vanilla][Kissing][Grinding][Virgin][Riding]
-									</p>
-								</td>
-								<td class="column4"><a href="https://www.reddit.com/r/GonewildAudible/comments/dtic9r/scriptfillff4m_dont_panic_alien_girl_and_her/">eroticallie</a></td>
-								<td class="column5">Fantasy/Sci-Fi</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/csnbeh/script_offerf4m_monsterwife_series_the_kobold">[F4M]
-										MonsterWife Series: The Kobold</a> </td>
-								<td class="column2">
-									<p>A kobold girl can be tiny, and not exactly the scariest, but what she lacks in
-										size, she definitely compensates for in eagerness. As their anniversary
-										approaches, she decides to celebrate with her husband by tying him down and
-										trying to be a dom for once. This doesn't exactly go as she expects, but it
-										definitely has a happy ending either way.</p>
-								</td>
-								<td class="column3">
-									<p>[Tiny Dragon][Monster Girl][Urban Fantasy][GFE/Wife][Size
-										Difference][Playful][Giggles][Kinky Couple][Switch][Begging][Creampie]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dbdefs/f4m_monsterwife_series_the_kobold_script_fill">HanulSkyGirl</a>
-								</td>
-								<td class="column5">Monster Girls, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cpj1uf/script_offerf4m_sword_and_sorcery_3_the_rescue">[F4M]
-										Sword and Sorcery 3 - The Rescue</a> </td>
-								<td class="column2">
-									<p>Part 3 of the Sword and Sorcery series. The knight gets captured by a thieves
-										guild and the wizard has to show his true powers to save his beloved one.</p>
-								</td>
-								<td class="column3">
-									<p>[FemKnight][Size
-										Difference][Fantasy][Romance][L-bombs][Vanilla][Cunnilingus][Creampie][Battle][Fantasy
-										Violence]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/d61kfr/f4m_sword_and_sorcery_3_the_rescue_script_fill">JayeWilde</a>
-								</td>
-								<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cnavj3/updatedscript_offerf4m_fat_bottomed_girl">[F4M]
-										Fat Bottomed Girl</a> </td>
-								<td class="column2">
-									<p>Nerdy MILF finds comfort in a shy and gentle young man after her husband leaves
-										her. She started to fall for him because of his kindness, but eventually got
-										attracted in... other ways too. Knowing that he is into her as well, she does
-										everything she can to get his attention.</p>
-								</td>
-								<td class="column3">
-									<p>[Nerdy][Curvy][MILF][Friends to Lovers][L-bombs][Romance][Fdom][Virgin
-										Guy][Grinding][Facesitting][Blowjob][Titfuck][Creampie]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cut62a/fat_bottomed_girl_script_fillf4m_fat_bottomed">kitten_dreams</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/crmk26/f4m_fat_bottomed_girl_script_fill_milf_next_door">POVscribe</a>
-								</td>
-								<td class="column5">Real World, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cji55e/script_offerf4m_renegade_princess">[F4M]
-										Renegade Princess</a> </td>
-								<td class="column2">
-									<p>A heroic prince raids a demon's lair to save a princess, but when he arrives, he
-										finds out she's not exactly needing to be saved. But she definitely needs
-										company. The intimate kind of company.</p>
-								</td>
-								<td class="column3">
-									<p>[Fantasy][Tomboy][Damsel Not So Much In Distress][Gentle
-										Fdom][Virgin][Kissing][Fingering][Bent Over]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cp7kbt/f4m_renegade_princess_script_fill_gentle_fdom">fieldsoflupine</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cjxreq/script_fillf4m_renegade_princess_fantasydamsel/">buildm3upbuttercup</a>
-								</td>
-								<td class="column5">Fantasy/Sci-Fi</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cfdrcw/script_offerf4m_the_ugly_duckling_teenage_lovers">[F4M]
-										The Ugly Duckling</a> </td>
-								<td class="column2">
-									<p>A girl that has been bullied for being the "weird kid" in high school finally
-										reunites with her old boyfriend after she had to go live in another state for
-										years.
-										She is very different and has developed a lot since then, but her feelings for
-										him are still the same.</p>
-								</td>
-								<td class="column3">
-									<p>[Teenage Lovers Reunited][Bullied Kid Became
-										Hottie][Emotional][Romantic][L-bombs][Vanilla][Slight
-										Possessiveness][Blowjob][Creampie] mentions of [Breast Growth]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/chz7df/f4m_the_ugly_ducklingscript_fill_teenage_lovers">BakerBee06</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cllo1r/script_fillf4m_the_ugly_duckling_gigglesteenage">BetweenSpaces</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/do9vzl/f4m_the_ugly_duckling_teenage_lovers/">HanulSkyGirl</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/chz830/m4f_script_flip_the_ugly_duckling_teenage_lovers/">(Flip)
-										EyesofSuggestion</a>
-								</td>
-								<td class="column5">Real World, Romantic, Story Heavy</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cc47p2/script_offerf4m_shes_the_boss_older_womanboss_vs">[F4M]
-										She's The Boss</a> </td>
-								<td class="column2">
-									<p>Older female boss and younger employee meet at the balcony on a party and find
-										out they're both introverts who have a lot of common, including not really
-										wanting to be there. She's reluctant at first, but eventually brings him home,
-										where they can have way more fun together.</p>
-								</td>
-								<td class="column3">
-									<p>[Older Woman][Boss vs Employee][Inexperienced Guy][Reluctant][Gentle
-										Fdom][Blowjob][Cunnilingus][Cowgirl][Sweet] but gets a little [Rough][Creampie]
-									</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/ches7k/f4m_shes_the_boss_script_fill_older_womanboss_vs">JayeWilde</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/d2lpnk/f4m_shes_the_boss_script_fill_older_woman">cyclosporineA</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dksall/f4m_shes_the_boss_older_womanboss_and">LookingForMyBlueSky</a>
-								</td>
-								<td class="column5">Real World</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/c9kl6w/script_offerf4m_monsterwife_series_the_gold">[F4M]
-										MonsterWife Series: The Gold Dragon</a> </td>
-								<td class="column2">
-									<p>As with all dragons, especially gold ones, she's a proud, elegant, confident
-										woman. And a very successful businesswoman too. But as work in this field can be
-										super stressful, after a rough day she really needs something to relax. And
-										what's better to forget about a bad day than a sexy massage and a good fuck?</p>
-								</td>
-								<td class="column3">
-									<p>[Dragon Girl][Monster Girl][Urban
-										Fantasy][GFE/Wife][Businesswoman][Massage][Spanking][Doggy][Creampie]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cvn0a8/f4m_monsterwife_series_the_gold_dragon_fsubdragon">HanulSkyGirl</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/chz63k/f4m_monsterwife_series_the_gold_dragon_script">lilyphoenix</a>
-								</td>
-								<td class="column5">Monster Girls, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/c7l11j/script_offerf4m_sword_and_sorcery_2_the_aftermath/">[F4M]
-										Sword and Sorcery 2 - The Aftermath</a> </td>
-								<td class="column2">
-									<p>Part 2 of the Sword and Sorcery series, showing what happens to our heroes after
-										the battle with the Red Dragon.</p>
-								</td>
-								<td class="column3">
-									<p>[FemKnight][Size Difference][Fantasy][Romance][L-bombs][Gentle
-										Fdom][Creampie][Post-battle][Injuries] and mentions of [Death]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cebasa/f4m_sword_and_sorcery_2_the_aftermath_script">JayeWilde</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cm0uzr/f4m_sword_and_sorcery_2_the_aftermath">MistressIrene</a>
-								</td>
-								<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/c4ym8x/script_offerf4m_monsterwife_series_the_invisible">[F4M]
-										MonsterWife Series: The Invisible Stalker</a> </td>
-								<td class="column2">
-									<p>After waking up feeling bad during the night, this adorable invisible girl asks
-										her husband to comfort her. It turns out that being permanently invisible has
-										given her a lot of insecurities. But of course, he'll do everything he can to
-										make sure she knows how appreciated she is.</p>
-								</td>
-								<td class="column3">
-									<p>[Invisible Girl][Monster Girl][Urban Fantasy][GFE/Wife][Very
-										Sweet][Vanilla][Mutual Reassurance][Spoonfuck][Creampie]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dk9u66/f4m_monsterwife_series_the_invisible_stalker">Feline_curiosity</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cbj5qa/f4m_monsterwife_series_the_invisible_stalker">MistressIrene</a>
-								</td>
-								<td class="column5">Monster Girls, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/c1gsq5/script_offerf4m_monsterwife_series_the_holstaur">[F4M]
-										MonsterWife Series: The Holstaur</a> </td>
-								<td class="column2">
-									<p>A human-cow hybrid tries to make a sweet morning breakfast for her husband, but
-										finds out that they're out of milk. Of course, being what she is, there is a
-										different way to get milk, but with how full she is today, this might have...
-										Other side-effects too.</p>
-								</td>
-								<td class="column3">
-									<p>[Girl-Cow][Monster Girl][Urban
-										Fantasy][Sweet][GFE/Wife][Lactation][Milking][Grinding][Creampie]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/dlodpg/f4m_your_monsterwife_the_holstaur_girlcowmonster">garden_slumber</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/crim5l/script_fillf4m_monsterwife_series_the_holstaur">Laddinger</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/c2k1cg/script_fill_f4m_monsterwife_series_the_holstaur">meltlilim</a>
-								</td>
-								<td class="column5">Monster Girls, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/bz18tm/script_offerf4m_best_game_ever_dungeon">[F4M]
-										Best Game Ever</a> </td>
-								<td class="column2">
-									<p>Shy dungeon master confesses her feelings for her best friend with a special
-										session and a lot of D&D pick up lines, and then shows him her naughty side. Who
-										said dorkiness can't be sexy too?</p>
-								</td>
-								<td class="column3">
-									<p>[Dungeon Master][Friends to Lovers][Confession][Playful][Nerdy][Adorkable]LOTS
-										of[D&D References][Shy]to[Slutty][Grinding][Riding][Blowjob]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/bzwrqd/f4mscript_fill_best_game_ever_dungeon">BraveryAudios</a>
-								</td>
-								<td class="column5">Real World, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/bxadrs/script_offerf4m_sword_and_sorcery">[F4M]
-										Sword and Sorcery</a> </td>
-								<td class="column2">
-									<p>An adventuring party is preparing to fight the evil Red Dragon. The fighter has a
-										secret she's been keeping this whole time: she's in love with the small and
-										charming wizard that has been her companion for so long. She is afraid, but
-										decides she needs to tell this to him before it's too late.</p>
-								</td>
-								<td class="column3">
-									<p>[FemKnight][Size difference][Switch][Fantasy][Romance][Sex
-										Magic][Blowjob][Spanking][L-bombs][Creampie][Aftercare]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/c8nsjx/f4m_sword_and_sorcery_script_fill_femknightsize">JayeWilde</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/byr3z1/f4m_sword_and_sorcery_updated_scriptfemknightsize">MistressIrene</a>
-								</td>
-								<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/bvrn9w/script_offerf4m_or_ff4m_awaken_friends_to">[F4M]
-										Awaken</a> </td>
-								<td class="column2">
-									<p>A guy has been having a crush for his best friend for a long time. After
-										confessing, he discovers that she is secretly a succubus that still didn't
-										complete her transformation. Her body and her personality change a lot after
-										finishing the ritual, but he still likes her no matter what.</p>
-								</td>
-								<td class="column3">
-									<p>[Friends to Lovers][Succubus][Breast and Ass Expansion][Personality
-										Switch][Petite and Shy]to[Voluptuous and Seductive][Acceptance][Aftercare]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/czqujk/f4m_awaken_friends_to_loverssuccubusbreast_and">anonelin</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/drld1e/ff4mawakenscript_fillfriends_to/">JayeWilde
-										and fieldsoflupine</a>
-								</td>
-								<td class="column5">Monster Girls, Romantic</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/btguda/f4mscript_offer_fear_of_the_dark">[F4M]
-										Fear Of The Dark</a> </td>
-								<td class="column2">
-									<p>A beginner adventurer is completely lost in the pitch black woods, when he is
-										surprised by a monster jumping out of the trees. He's initially afraid of what
-										she'll do to him, but it turns out she just wants to help and tend to his
-										wounds. And possibly get some sweet cuddles and lovemaking in return.</p>
-								</td>
-								<td class="column3">
-									<p>[Mysterious][Monster girl][In the darkness][Gentle
-										Fdom][Playful][Cuddling][Claws][Tailjob][Riding][Creampie]</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/c83j6a/f4mfear_of_the_dark_scriptfillmysteriousmonster">Hou_bi</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cueavl/f4m_script_fill_fear_of_the_dark_mysterious">HannahSlamma</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/cpljmo/f4m_fear_of_the_dark_monster_girl_mysterious_in">HanulSkyGirl</a>
-								</td>
-								<td class="column5">Monster Girls</td>
-							</tr>
-							<tr>
-								<td class="column1"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/bpfwya/script_offerf4m_a_matter_of_life_and_death">[F4M]
-										A Matter Of Life And Death</a> </td>
-								<td class="column2">
-									<p>A paladin finally finds and confronts the evil Lich he's been hunting for years,
-										but he finds out that she is not the monster he was looking for. Actually, she
-										really only needs some love and cuddles.</p>
-								</td>
-								<td class="column3">
-									<p>[Fantasy][F Necromancer vs M Paladin][Enemies to
-										Lovers][Emotional][Shy][Virgin][Vanilla][Playful][Cunnilingus][Riding][Swallowing][Aftercare]
-									</p>
-								</td>
-								<td class="column4"><a
-										href="https://www.reddit.com/r/gonewildaudio/comments/c4v0es/f4m_a_matter_of_life_and_death_fantasyenemies_to">MistressIrene</a>
-									<br><br>
-									<a
-										href="https://www.reddit.com/r/gonewildaudio/comments/ckkuzr/f4m_a_matter_of_life_and_death_fantasyenemies_to">FaintHeart19</a>
-								</td>
-								<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+									<td class="column1"><a
+											href="https://www.reddit.com/r/gonewildaudio/comments/duw456/script_offerf4m_monsterwife_series_the_dog_girl/">[F4M]
+											MonsterWife Series: The Dog Girl</a> </td>
+									<td class="column2">
+										<p>You and your loyal and loving canine wife finally decided to have babies! Because of this, she stopped taking her heat control medicine so the chances of pregnancy are increased. However... After repressing it for so long, her heat came in <i>very</i> strong this time around. And she is going to beg you to breed her if she has to.</p>
+									</td>
+									<td class="column3">
+										<p>[Monster Girl][Urban Fantasy][GFE/Wife][Sweet][Planned Pregnancy] but also [In Heat][Begging][Rough][Breeding][Spaking][Creampie][Aftercare]</p>
+									</td>
+									<td class="column4">None yet</td>
+									<td class="column5">Monster Girls, Romantic</td>
+								</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dsmni2/script_offerf4m_love_and_load_scifibattle/">[F4M]
+									Love and Load</a> </td>
+							<td class="column2">
+								<p>You're a young scientist who just managed to save enough credits to buy
+									your own lab. One day you go to the old storage room to do some cleaning and
+									find someone down there. A girl. Or at least... Something similar. She's a
+									hybrid between a human and a machine, and she was completely abandoned by
+									whoever owned the lab before you. You decide to take care of that girl, and you
+									both find out that love can bloom in the unlikeliest of situations.</p>
+							</td>
+							<td class="column3">
+								<p>[Sci-Fi][Battle Cyborg][Failed Prototype][Finds a Loving Master][Emotional][Sweetness Overflow][Kissing][Virgin][Vanilla][L-bombs][Creampie]</p>
+							</td>
+							<td class="column4">None yet</td>
+							<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/drm9cb/script_offerf4m_the_white_queens_suitor/">[F4M]
+									The White Queen's Suitor</a> </td>
+							<td class="column2">
+								<p>You are a farm boy coming from a very humble background. After you reached
+									adulthold, your parents found out that the White Queen of the Snowlands is
+									hosting a contest to find a new husband, and they spend all of their savings to
+									send you there. After all their efforts you couldn't just refuse it. Deep down
+									inside you're afraid, but it turns out you and the queen might find out a lot
+									more about each other — and yourselves — than you initially expected.</p>
+							</td>
+							<td class="column3">
+								<p>[Fantasy][Queen and Farm Boy][Sweet][Gentle Fdom][Magic][Inexperienced
+									Guy][Finding out her dommy side][69][Riding][Creampie][Aftercare][Collab]</p>
+							</td>
+							<td class="column4"><a herf="https://www.reddit.com/r/gonewildaudio/comments/dv1irr/the_white_queens_suitor_script_fill_f4m_fantasy/">kitten_dreams</a></td>
+							<td class="column5">Fantasy/Sci-Fi, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/GWAScriptGuild/comments/dm742a/script_offerf4m_always_in_my_head_monster">[F4M]
+									Always
+									In My Head</a> </td>
+							<td class="column2">
+								<p>Your Dullahan best friend has been acting a little weird lately, very...
+									Tsundere. Her head isn't brave enough to confess her feelings for you, but
+									her body has different plans.</p>
+							</td>
+							<td class="column3">
+								<p>[Monster Girl][Dullahan][Friends to Lovers][Tsundere][Sweet][Body Betrayal...
+									Literally][Grinding][Blowjob][Facesitting][Doggy][Creampie][Aftercare]</p>
+							</td>
+							<td class="column4">None yet</td>
+							<td class="column5">Monster Girls, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dhxprz/script_offerf4m_i_will_follow_you_into_the_dark">[F4M]
+									I Will Follow You Into The Dark</a> </td>
+							<td class="column2">
+								<p>You arrive at home after a fairly normal day, but something feels a little
+									odd. When suddenly, you see a creature
+									crawling from under your bed. You're sure you need to run before she gets to
+									you and your life is over, but... Is that really what she wants?</p>
+							</td>
+							<td class="column3">
+								<p>[Monster Girl][Onryō][Ghost][Spooky][Crying][Emotional][Very dark past,
+									please see note inside] but also surprisingly
+									[Vanilla][Sweet][Loving][Kissing][Two Endings]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dielza/script_fillf4m_i_will_follow_you_into_the_dark">RubySeaWitch</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dieafh/script_fill_f4m_i_will_follow_you_into_the_dark">SquirelFeed</a>
+							</td>
+							<td class="column5">Monster Girls, Story Heavy, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dep9ru/script_offerfff4m_monster_college_halloween_party">[FFF4M]
+									Monster College Halloween Party</a> </td>
+							<td class="column2">
+								<p>You're still getting used to being the all-monster
+									college, and feel a bit out of place during Halloween, but your night suddenly
+									takes a very
+									interesting
+									turn when you encounter a naughty angel, an elegant sphinx and a shy slime. In a
+									crazy turn of events now you have three sexy monster girls
+									thirsting over you - and each other. Not as bad as it initially seemed, is it?
+								</p>
+							</td>
+							<td class="column3">
+								<p>[Monster Girls] in [Halloween Costumes][Angel Girl][Slime Girl][Sphinx
+									Girl][Foursome][Magic][Multiple Orgasms][Lots of Creampies][More Tags Inside]
+								</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dk1cn6/fff4m_fff4a_monster_college_halloween_party">HannahSlamma,
+									HandInMyCookieJar and black_mamba866</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dnfpu8/fff4m_monster_girl_college_party_monster_girls_in">garden_slumber,
+									RuthieRen and fieldsoflupine</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dpqfng/fff4m_monster_college_halloween_party_script_fill/">JayeWilde,
+									BraveryAudios and Xyta_Midnyte</a>
+							</td>
+							<td class="column5">Monster Girls</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/d55rec/script_offerf4m_monsterwife_series_the_vampire">[F4M]
+									MonsterWife Series: The Vampire</a> </td>
+							<td class="column2">
+								<p>This vampire girl gets home very tired from her night shift job, and also very
+									hungry. She doesn't really want to bother her husband asking to feed on him
+									after waking him up in the middle of the night, but since he cares about her
+									enough to offer that... She's gonna make sure to use her good little snack a
+									lot.</p>
+							</td>
+							<td class="column3">
+								<p>[Monster Girl][Urban Fantasy][GFE/Wife][Comforting][Feeding on you][Gentle
+									Fdom][Grinding][Riding][Creampie] slight [Bloodplay] because [Vampire]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dieant/f4m_monsterwife_series_the_vampire_monster">rinna_ml</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/djr90w/f4m_your_monsterwife_the_vampire_gwalloween">garden_slumber</a>
+							</td>
+							<td class="column5">Monster Girls, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/d1wtqj/script_offerf4m_make_love_not_warcraft">[F4M]
+									Make Love, Not Warcraft</a> </td>
+							<td class="column2">
+								<p>A guy and a girl who have been playing World of Warcraft together and been best
+									friends for years, and they are finally meeting in real life. When this happens,
+									though, their feelings for each other start surfacing, and they decide to
+									explore sexuality for the first time together.</p>
+							</td>
+							<td class="column3">
+								<p>[WoW][Guildies Meeting IRL][Nerdy][Friends to
+									Lovers][Confession][L-bombs][Shy][Tsundere][Vanilla][Outercourse][Creampie]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/d3dz84/f4m_make_love_not_warcraft_wowguildies_meeting">TheIttyBittyPrincess</a>
+							</td>
+							<td class="column5">Real World, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cyuz96/script_offerf4m_oni_senior_shows_whos_in_charge/?utm_medium=android_app&utm_source=share">[F4M]
+									Oni Senior Shows Who's In Charge</a> </td>
+							<td class="column2">
+								<p>Still very nervous in the new, all-monster college, you get welcomed by one of
+									the members of the student council, a friendly - albeit a bit cocky - Oni girl
+									that makes you look like a dwarf in comparison. She gives you an orientation
+									tour, but the tour ends up having an unexpected destination in the end: her
+									bedroom.</p>
+							</td>
+							<td class="column3">
+								<p>[Monster College][Oni Girl][Giant Woman][Size Difference][Fdom][Thicc][Big
+									Tits][Aggressive] but still [Consensual][Creampie]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/d7u2sc/f4m_oni_senior_shows_whos_in_charge_monster">MsVictoriaShine</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/czy95e/f4m_oni_senior_shows_whos_in_charge_monster">Vuhjeina</a>
+							</td>
+							<td class="column5">Monster Girls</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cwttgf/updatedscript_offerf4m_youre_the_best_around">[F4M]
+									You're The Best Around</a> </td>
+							<td class="column2">
+								<p>This tomboy girl always teases her best friend, sometimes in not so nice ways,
+									but secretely it's her way of trying to get his attention. She's never been good
+									at expressing her emotions, but discovers he has feelings for her as well...
+									After kicking his ass.</p>
+							</td>
+							<td class="column3">
+								<p>[Tsundere][Tomboy][Fighter][Frenemies to Lovers][Confession][FSub][Dd/lg] but [No
+									Age][Blowjob][Against the wall]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/d4vyaq/youre_the_best_around_script">kitten_dreams</a>
+							</td>
+							<td class="column5">Real World</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cvu2wb/script_offerfa4m_dont_panic_alien_girl_and_her">[FA4M]
+									Don't Panic!</a> </td>
+							<td class="column2">
+								<p>An alien girl crashes her personal exploration ship in the house of a human. His
+									initial reaction is being frightened, but after things calm down, he offers to
+									help her and they start getting together really well, in multiple ways. Her
+									feisty AI companion who loves to tease her master isn't so happy with that,
+									though.</p>
+							</td>
+							<td class="column3">
+								<p>[Sarcastic AI
+									Companion][Humor][Sweet][Adorkable][Vanilla][Kissing][Grinding][Virgin][Riding]
+								</p>
+							</td>
+							<td class="column4"><a href="https://www.reddit.com/r/GonewildAudible/comments/dtic9r/scriptfillff4m_dont_panic_alien_girl_and_her/">eroticallie</a></td>
+							<td class="column5">Fantasy/Sci-Fi</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/csnbeh/script_offerf4m_monsterwife_series_the_kobold">[F4M]
+									MonsterWife Series: The Kobold</a> </td>
+							<td class="column2">
+								<p>A kobold girl can be tiny, and not exactly the scariest, but what she lacks in
+									size, she definitely compensates for in eagerness. As their anniversary
+									approaches, she decides to celebrate with her husband by tying him down and
+									trying to be a dom for once. This doesn't exactly go as she expects, but it
+									definitely has a happy ending either way.</p>
+							</td>
+							<td class="column3">
+								<p>[Tiny Dragon][Monster Girl][Urban Fantasy][GFE/Wife][Size
+									Difference][Playful][Giggles][Kinky Couple][Switch][Begging][Creampie]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dbdefs/f4m_monsterwife_series_the_kobold_script_fill">HanulSkyGirl</a>
+							</td>
+							<td class="column5">Monster Girls, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cpj1uf/script_offerf4m_sword_and_sorcery_3_the_rescue">[F4M]
+									Sword and Sorcery 3 - The Rescue</a> </td>
+							<td class="column2">
+								<p>Part 3 of the Sword and Sorcery series. The knight gets captured by a thieves
+									guild and the wizard has to show his true powers to save his beloved one.</p>
+							</td>
+							<td class="column3">
+								<p>[FemKnight][Size
+									Difference][Fantasy][Romance][L-bombs][Vanilla][Cunnilingus][Creampie][Battle][Fantasy
+									Violence]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/d61kfr/f4m_sword_and_sorcery_3_the_rescue_script_fill">JayeWilde</a>
+							</td>
+							<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cnavj3/updatedscript_offerf4m_fat_bottomed_girl">[F4M]
+									Fat Bottomed Girl</a> </td>
+							<td class="column2">
+								<p>Nerdy MILF finds comfort in a shy and gentle young man after her husband leaves
+									her. She started to fall for him because of his kindness, but eventually got
+									attracted in... other ways too. Knowing that he is into her as well, she does
+									everything she can to get his attention.</p>
+							</td>
+							<td class="column3">
+								<p>[Nerdy][Curvy][MILF][Friends to Lovers][L-bombs][Romance][Fdom][Virgin
+									Guy][Grinding][Facesitting][Blowjob][Titfuck][Creampie]</p>
+							</td>
+							<td class="column4">
+								<a href="https://www.reddit.com/r/gonewildaudio/comments/dzi7o8/script_fillf4m_fat_bottomed_girl/">allusions_of</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cut62a/fat_bottomed_girl_script_fillf4m_fat_bottomed">kitten_dreams</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/crmk26/f4m_fat_bottomed_girl_script_fill_milf_next_door">POVscribe</a>
+							</td>
+							<td class="column5">Real World, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cji55e/script_offerf4m_renegade_princess">[F4M]
+									Renegade Princess</a> </td>
+							<td class="column2">
+								<p>A heroic prince raids a demon's lair to save a princess, but when he arrives, he
+									finds out she's not exactly needing to be saved. But she definitely needs
+									company. The intimate kind of company.</p>
+							</td>
+							<td class="column3">
+								<p>[Fantasy][Tomboy][Damsel Not So Much In Distress][Gentle
+									Fdom][Virgin][Kissing][Fingering][Bent Over]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cp7kbt/f4m_renegade_princess_script_fill_gentle_fdom">fieldsoflupine</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cjxreq/script_fillf4m_renegade_princess_fantasydamsel/">buildm3upbuttercup</a>
+							</td>
+							<td class="column5">Fantasy/Sci-Fi</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cfdrcw/script_offerf4m_the_ugly_duckling_teenage_lovers">[F4M]
+									The Ugly Duckling</a> </td>
+							<td class="column2">
+								<p>A girl that has been bullied for being the "weird kid" in high school finally
+									reunites with her old boyfriend after she had to go live in another state for
+									years.
+									She is very different and has developed a lot since then, but her feelings for
+									him are still the same.</p>
+							</td>
+							<td class="column3">
+								<p>[Teenage Lovers Reunited][Bullied Kid Became
+									Hottie][Emotional][Romantic][L-bombs][Vanilla][Slight
+									Possessiveness][Blowjob][Creampie] mentions of [Breast Growth]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/chz7df/f4m_the_ugly_ducklingscript_fill_teenage_lovers">BakerBee06</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cllo1r/script_fillf4m_the_ugly_duckling_gigglesteenage">BetweenSpaces</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/do9vzl/f4m_the_ugly_duckling_teenage_lovers/">HanulSkyGirl</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/chz830/m4f_script_flip_the_ugly_duckling_teenage_lovers/">(Flip)
+									EyesofSuggestion</a>
+							</td>
+							<td class="column5">Real World, Romantic, Story Heavy</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cc47p2/script_offerf4m_shes_the_boss_older_womanboss_vs">[F4M]
+									She's The Boss</a> </td>
+							<td class="column2">
+								<p>Older female boss and younger employee meet at the balcony on a party and find
+									out they're both introverts who have a lot of common, including not really
+									wanting to be there. She's reluctant at first, but eventually brings him home,
+									where they can have way more fun together.</p>
+							</td>
+							<td class="column3">
+								<p>[Older Woman][Boss vs Employee][Inexperienced Guy][Reluctant][Gentle
+									Fdom][Blowjob][Cunnilingus][Cowgirl][Sweet] but gets a little [Rough][Creampie]
+								</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/ches7k/f4m_shes_the_boss_script_fill_older_womanboss_vs">JayeWilde</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/d2lpnk/f4m_shes_the_boss_script_fill_older_woman">cyclosporineA</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dksall/f4m_shes_the_boss_older_womanboss_and">LookingForMyBlueSky</a>
+							</td>
+							<td class="column5">Real World</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/c9kl6w/script_offerf4m_monsterwife_series_the_gold">[F4M]
+									MonsterWife Series: The Gold Dragon</a> </td>
+							<td class="column2">
+								<p>As with all dragons, especially gold ones, she's a proud, elegant, confident
+									woman. And a very successful businesswoman too. But as work in this field can be
+									super stressful, after a rough day she really needs something to relax. And
+									what's better to forget about a bad day than a sexy massage and a good fuck?</p>
+							</td>
+							<td class="column3">
+								<p>[Dragon Girl][Monster Girl][Urban
+									Fantasy][GFE/Wife][Businesswoman][Massage][Spanking][Doggy][Creampie]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cvn0a8/f4m_monsterwife_series_the_gold_dragon_fsubdragon">HanulSkyGirl</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/chz63k/f4m_monsterwife_series_the_gold_dragon_script">lilyphoenix</a>
+							</td>
+							<td class="column5">Monster Girls, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/c7l11j/script_offerf4m_sword_and_sorcery_2_the_aftermath/">[F4M]
+									Sword and Sorcery 2 - The Aftermath</a> </td>
+							<td class="column2">
+								<p>Part 2 of the Sword and Sorcery series, showing what happens to our heroes after
+									the battle with the Red Dragon.</p>
+							</td>
+							<td class="column3">
+								<p>[FemKnight][Size Difference][Fantasy][Romance][L-bombs][Gentle
+									Fdom][Creampie][Post-battle][Injuries] and mentions of [Death]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cebasa/f4m_sword_and_sorcery_2_the_aftermath_script">JayeWilde</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cm0uzr/f4m_sword_and_sorcery_2_the_aftermath">MistressIrene</a>
+							</td>
+							<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/c4ym8x/script_offerf4m_monsterwife_series_the_invisible">[F4M]
+									MonsterWife Series: The Invisible Stalker</a> </td>
+							<td class="column2">
+								<p>After waking up feeling bad during the night, this adorable invisible girl asks
+									her husband to comfort her. It turns out that being permanently invisible has
+									given her a lot of insecurities. But of course, he'll do everything he can to
+									make sure she knows how appreciated she is.</p>
+							</td>
+							<td class="column3">
+								<p>[Invisible Girl][Monster Girl][Urban Fantasy][GFE/Wife][Very
+									Sweet][Vanilla][Mutual Reassurance][Spoonfuck][Creampie]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dk9u66/f4m_monsterwife_series_the_invisible_stalker">Feline_curiosity</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cbj5qa/f4m_monsterwife_series_the_invisible_stalker">MistressIrene</a>
+							</td>
+							<td class="column5">Monster Girls, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/c1gsq5/script_offerf4m_monsterwife_series_the_holstaur">[F4M]
+									MonsterWife Series: The Holstaur</a> </td>
+							<td class="column2">
+								<p>A human-cow hybrid tries to make a sweet morning breakfast for her husband, but
+									finds out that they're out of milk. Of course, being what she is, there is a
+									different way to get milk, but with how full she is today, this might have...
+									Other side-effects too.</p>
+							</td>
+							<td class="column3">
+								<p>[Girl-Cow][Monster Girl][Urban
+									Fantasy][Sweet][GFE/Wife][Lactation][Milking][Grinding][Creampie]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/dlodpg/f4m_your_monsterwife_the_holstaur_girlcowmonster">garden_slumber</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/crim5l/script_fillf4m_monsterwife_series_the_holstaur">Laddinger</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/c2k1cg/script_fill_f4m_monsterwife_series_the_holstaur">meltlilim</a>
+							</td>
+							<td class="column5">Monster Girls, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/bz18tm/script_offerf4m_best_game_ever_dungeon">[F4M]
+									Best Game Ever</a> </td>
+							<td class="column2">
+								<p>Shy dungeon master confesses her feelings for her best friend with a special
+									session and a lot of D&D pick up lines, and then shows him her naughty side. Who
+									said dorkiness can't be sexy too?</p>
+							</td>
+							<td class="column3">
+								<p>[Dungeon Master][Friends to Lovers][Confession][Playful][Nerdy][Adorkable]LOTS
+									of[D&D References][Shy]to[Slutty][Grinding][Riding][Blowjob]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/bzwrqd/f4mscript_fill_best_game_ever_dungeon">BraveryAudios</a>
+							</td>
+							<td class="column5">Real World, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/bxadrs/script_offerf4m_sword_and_sorcery">[F4M]
+									Sword and Sorcery</a> </td>
+							<td class="column2">
+								<p>An adventuring party is preparing to fight the evil Red Dragon. The fighter has a
+									secret she's been keeping this whole time: she's in love with the small and
+									charming wizard that has been her companion for so long. She is afraid, but
+									decides she needs to tell this to him before it's too late.</p>
+							</td>
+							<td class="column3">
+								<p>[FemKnight][Size difference][Switch][Fantasy][Romance][Sex
+									Magic][Blowjob][Spanking][L-bombs][Creampie][Aftercare]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/c8nsjx/f4m_sword_and_sorcery_script_fill_femknightsize">JayeWilde</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/byr3z1/f4m_sword_and_sorcery_updated_scriptfemknightsize">MistressIrene</a>
+							</td>
+							<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/bvrn9w/script_offerf4m_or_ff4m_awaken_friends_to">[F4M]
+									Awaken</a> </td>
+							<td class="column2">
+								<p>A guy has been having a crush for his best friend for a long time. After
+									confessing, he discovers that she is secretly a succubus that still didn't
+									complete her transformation. Her body and her personality change a lot after
+									finishing the ritual, but he still likes her no matter what.</p>
+							</td>
+							<td class="column3">
+								<p>[Friends to Lovers][Succubus][Breast and Ass Expansion][Personality
+									Switch][Petite and Shy]to[Voluptuous and Seductive][Acceptance][Aftercare]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/czqujk/f4m_awaken_friends_to_loverssuccubusbreast_and">anonelin</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/drld1e/ff4mawakenscript_fillfriends_to/">JayeWilde
+									and fieldsoflupine</a>
+							</td>
+							<td class="column5">Monster Girls, Romantic</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/btguda/f4mscript_offer_fear_of_the_dark">[F4M]
+									Fear Of The Dark</a> </td>
+							<td class="column2">
+								<p>A beginner adventurer is completely lost in the pitch black woods, when he is
+									surprised by a monster jumping out of the trees. He's initially afraid of what
+									she'll do to him, but it turns out she just wants to help and tend to his
+									wounds. And possibly get some sweet cuddles and lovemaking in return.</p>
+							</td>
+							<td class="column3">
+								<p>[Mysterious][Monster girl][In the darkness][Gentle
+									Fdom][Playful][Cuddling][Claws][Tailjob][Riding][Creampie]</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/c83j6a/f4mfear_of_the_dark_scriptfillmysteriousmonster">Hou_bi</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cueavl/f4m_script_fill_fear_of_the_dark_mysterious">HannahSlamma</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/cpljmo/f4m_fear_of_the_dark_monster_girl_mysterious_in">HanulSkyGirl</a>
+							</td>
+							<td class="column5">Monster Girls</td>
+						</tr>
+						<tr>
+							<td class="column1"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/bpfwya/script_offerf4m_a_matter_of_life_and_death">[F4M]
+									A Matter Of Life And Death</a> </td>
+							<td class="column2">
+								<p>A paladin finally finds and confronts the evil Lich he's been hunting for years,
+									but he finds out that she is not the monster he was looking for. Actually, she
+									really only needs some love and cuddles.</p>
+							</td>
+							<td class="column3">
+								<p>[Fantasy][F Necromancer vs M Paladin][Enemies to
+									Lovers][Emotional][Shy][Virgin][Vanilla][Playful][Cunnilingus][Riding][Swallowing][Aftercare]
+								</p>
+							</td>
+							<td class="column4"><a
+									href="https://www.reddit.com/r/gonewildaudio/comments/c4v0es/f4m_a_matter_of_life_and_death_fantasyenemies_to">MistressIrene</a>
+								<br><br>
+								<a
+									href="https://www.reddit.com/r/gonewildaudio/comments/ckkuzr/f4m_a_matter_of_life_and_death_fantasyenemies_to">FaintHeart19</a>
+							</td>
+							<td class="column5">Fantasy/Sci-Fi, Romantic, Story Heavy</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
+	</div>
 	</div>
 	<footer>
 		Template developed by AngelMain
 	</footer>
 
 
+	<!-- For the love of god don't change those-->
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

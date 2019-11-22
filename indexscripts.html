@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>AngelMain's SFW Scripts</title> <!-- Change this to your username -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link id="pagestyle" rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
+
+	<!--===============================================================================================-->
+</head>
+
+<!-- Do not change anything inside the <head></head> tag other than the title. If you do, things will probably explode -->
+
+<body>
+	<script> // Script that creates all of the functional part of the page. Do not modify anything inside this tag unless you really know what you're doing
+		(function (document) {
+			'index.html';
+
+			var mode = localStorage['mode']; // Gets current light/dark setting
+
+			function swapStyleSheet(button) { // Swaps light/dark mode on button click
+				if (mode == "dark") {
+					document.getElementById("pagestyle").setAttribute("href", "css/mainlight.css");
+					mode = "light";
+					localStorage['mode'] = 'light';
+					button.innerHTML = "Dark Mode";
+				}
+
+				else if (mode == "light") {
+					document.getElementById("pagestyle").setAttribute("href", "css/main.css");
+					mode = "dark";
+					localStorage['mode'] = 'dark';
+					button.innerHTML = "Light Mode";
+				}
+			}
+
+			function keepStyleSheet(button) { // Decides if the site will be on light or dark theme depending on the previous setting
+				if (mode == "light") {
+					document.getElementById("pagestyle").setAttribute("href", "css/mainlight.css");
+					mode = "light";
+					localStorage['mode'] = 'light';
+					button.innerHTML = "Dark Mode";
+				}
+
+				else if (mode == "dark") {
+					document.getElementById("pagestyle").setAttribute("href", "css/main.css");
+					mode = "dark";
+					localStorage['mode'] = 'dark';
+					button.innerHTML = "Light Mode";
+				}
+
+				$('td').each(function () { // Marks Age, Beast and Rape tags as red. If you don't want this feature, delete everything from the $
+					$(this).html(
+						$(this).html()
+							.replace(
+								/(?<!-)(\[\brape\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+							.replace(
+								/(?<!-)(\[\bage\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+							.replace(
+								/(?<!-)(\[\bbeast\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+					);
+				}); // Until here. If you want to mark other tags as red too, add more replaces after the last one and switch the word between the /b's for
+				// the one you want
+			}
+
+			var LightTableFilter = (function (Arr) {
+
+				var _input;
+
+				function _onInputEvent(e) { // A lot of stuff to make the table filter work
+					_input = e.target;
+					var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+					Arr.forEach.call(tables, function (table) {
+						Arr.forEach.call(table.tBodies, function (tbody) {
+							Arr.forEach.call(tbody.rows, _filter);
+						});
+					});
+				}
+
+				function _filter(row) {
+					var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+					row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+				}
+
+				return {
+					init: function () {
+						var inputs = document.getElementsByClassName('light-table-filter');
+						Arr.forEach.call(inputs, function (input) {
+							input.oninput = _onInputEvent;
+						});
+					}
+				};
+			})(Array.prototype);
+
+			document.addEventListener('readystatechange', function () { // Adds table filter, event listeners and calls the initial page settings
+				if (document.readyState === 'complete') {
+					LightTableFilter.init();
+					var a = document.getElementById("modechange");
+					a.innerHTML = "Light Mode";
+					a.onclick = function () { swapStyleSheet(this); };
+
+					if (mode != "dark" && mode != "light") {
+						mode = "dark";
+						localStorage['mode'] = 'dark';
+					}
+
+					keepStyleSheet(a);
+
+
+				}
+			});
+
+		})(document);
+
+	</script>
+	<header>
+		<div id="topbuttons"><button name="modechange" id="modechange"></button><br>
+			<a href=index.html><button name="scriptsoraudios" id="scriptsoraudios">NSFW</button></a></div>
+	</header>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<h1>AngelMain's SFW Scripts</h1>
+				<select class="light-table-filter" data-table="order-table" placeholder="Filter">
+					<option value="">Everything</option>
+					<option value="None yet">Unfilled Only</option>
+					<optgroup label="By Category">
+						<option value="Monster Girls">Monster Girls</option>
+						<option value="Fantasy/Sci-Fi">Fantasy/Sci-Fi</option>
+						<option value="Real World">Real World</option>
+						<option value="Romantic">Romantic</option>
+						<option value="Story Heavy">Story Heavy</option>
+					</optgroup>
+				</select>
+				<div class="table100">
+					<table class="order-table">
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Name</th>
+								<th class="column2">Synopsis</th>
+								<th class="column3">Tags</th>
+								<th class="column4">Fills</th>
+								<th class="column5">Categories</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="column1"><a
+										href="https://www.reddit.com/r/pillowtalkaudio/comments/cwtw6r/script_offerf4m_a_matter_of_life_and_death/">[F4M]
+										A Matter of Life and Death</a> </td>
+								<td class="column2">
+									<p>A paladin finally finds and confronts the evil Lich he's been hunting for years,
+										but he finds out that she is not the monster he was looking for. Actually, she
+										really only needs some love and cuddles.</p>
+								</td>
+								<td class="column3">
+									<p>[Fantasy][Paladin vs Necromancer][Enemies to Lovers][Emotional][Dark
+										Past][Shy][Cuddling for Warmth][Kissing][Happy Ending]</p>
+								</td>
+								<td class="column4"><a
+										href="https://www.reddit.com/r/pillowtalkaudio/comments/dzvxvr/f4m_script_fill_a_matter_of_life_and_death/">Nyaanneko</a>
+								</td>
+								<td class="column5">Fantasy/Sci-Fi , Story Heavy, Romantic</td>
+							</tr>
+							<tr>
+								<td class="column1"><a
+										href="https://www.reddit.com/r/pillowtalkaudio/comments/cv3e2t/script_offera4a_best_game_ever_dungeon/">[F4M]
+										Best Gamer Ever</a> </td>
+								<td class="column2">
+									<p>Shy dungeon master confesses their feelings for their best friend with a special session and a lot of D&D pick up lines. Lots of kisses and cuddles (and nerdiness) endue!</p>
+								</td>
+								<td class="column3">
+									<p>[Dungeon Master][Friends to Lovers][Confession][Playful][Nerdy][Adorkable]LOTS of[D&D References][Shy][Kissing][Cuddling][SFW]</p>
+								</td>
+								<td class="column4"><a
+										href="https://www.reddit.com/r/pillowtalkaudio/comments/d6d55m/f4a_best_game_ever_script_fill_dungeon/">JayeWilde</a>
+										<br><br>
+										<a href="https://www.reddit.com/r/pillowtalkaudio/comments/cyhcv7/f4a_script_fill_best_game_ever_friends_to_lovers/">CaitCher2009</a>
+								</td>
+								<td class="column5">Real World, Romantic</td>
+							</tr>
+							<tr>
+								<td class="column1"><a
+										href="https://www.reddit.com/r/pillowtalkaudio/comments/d3nvk2/script_offerf4a_make_love_not_warcraft/">[F4M]
+										Make Love, Not Warcraft</a> </td>
+								<td class="column2">
+									<p>A guy and a girl who have been playing World of Warcraft together and been best friends for years, and they are finally meeting in real life. When this happens, though, their feelings for each other start surfacing, and she finally makes a confession to him.</p>
+								</td>
+								<td class="column3">
+									<p>[WoW][Guildies Meeting IRL][Friends to Lovers][Confession][Shy][Tsundere][Kissing][Cuddling]</p>
+								</td>
+								<td class="column4"><a
+										href="https://www.reddit.com/r/pillowtalkaudio/comments/dqqmtu/f4mscript_fill_make_love_not_warcraft_wowguildies/">StrwbrryFieldsForHer</a>
+								</td>
+								<td class="column5">Real World, Romantic</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		Template developed by AngelMain
+	</footer>
+
+
+	<!-- For the love of god don't change those-->
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
