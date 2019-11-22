@@ -24,7 +24,7 @@
       font-family: sans-serif;
   }
   
-  header button {
+  #modechange {
     background-color: #36304a; /* Green background */
     border: 1px solid #2c283b; /* Green border */
     color: white; /* White text */
@@ -33,10 +33,25 @@
     cursor: pointer; /* Pointer/hand icon */
     width: 150px;
     height: 60px;
+    text-align: center;
+  }
+
+  #scriptsoraudios {
+    background-color: #36304a; /* Green background */
+    border: 1px solid #2c283b; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    margin: 10px;
+    cursor: pointer; /* Pointer/hand icon */
+    width: 150px;
+    height: 60px;
+    text-align: center;
+  }
+
+  #topbuttons {
     position: absolute;
     top: 0;
     right: 0;
-    text-align: center;
   }
   
   /* ------------------------------------ */
@@ -239,9 +254,16 @@
     body {
       background: rgb(171, 214, 255);
     }
-  
-    header button {
-      width:89%;
+
+    #modechange {
+      width: 95%;
+    }
+
+    #scriptsoraudios {
+      width: 95%;
+    }
+
+    #topbuttons {
       position: relative;
     }
   

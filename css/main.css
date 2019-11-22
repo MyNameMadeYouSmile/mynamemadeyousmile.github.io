@@ -24,7 +24,7 @@ body, html {
 	font-family: sans-serif;
 }
 
-header button {
+#modechange {
   background-color: #005730; /* Green background */
   border: 1px solid #00331c; /* Green border */
   color: white; /* White text */
@@ -33,11 +33,27 @@ header button {
   cursor: pointer; /* Pointer/hand icon */
   width: 150px;
   height: 60px;
+  text-align: center;
+}
+
+#scriptsoraudios {
+  background-color: #005730; /* Green background */
+  border: 1px solid #00331c; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  margin: 10px;
+  cursor: pointer; /* Pointer/hand icon */
+  width: 150px;
+  height: 60px;
+  text-align: center;
+}
+
+#topbuttons {
   position: absolute;
   top: 0;
   right: 0;
-  text-align: center;
 }
+
 
 /* ------------------------------------ */
 a {
@@ -104,7 +120,6 @@ footer {
   text-align: center;
   color: rgb(235, 235, 235);
 }
-
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -250,8 +265,15 @@ p {
     background: rgb(12, 12, 12);
   }
 
-  header button {
-    width:89%;
+  #modechange {
+    width: 95%;
+  }
+
+  #scriptsoraudios {
+    width: 95%;
+  }
+
+  #topbuttons {
     position: relative;
   }
 
