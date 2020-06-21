@@ -309,7 +309,7 @@ p {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "Name";
+    content: "Script Title";
   }
   table tbody tr td:nth-child(2):before {
     content: "Synopsis";
@@ -321,7 +321,7 @@ p {
     content: "Fills";
   }
   table tbody tr td:nth-child(5):before {
-    content: "Genre";
+    content: "Category";
   }
   
   .column1 {
