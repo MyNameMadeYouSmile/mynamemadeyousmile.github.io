@@ -162,7 +162,6 @@ table {
   border-collapse: collapse;
   background: #222222;
   border-radius: 10px;
-  counter-reset: rowNumber;
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
@@ -196,14 +195,6 @@ table td.c, table th.c {
 }
 table td.r, table th.r {
   text-align: center;
-}
-
-table tr::before {
-  display: table-cell;
-  counter-increment: rowNumber;
-  content: counter(rowNumber) ".";
-  padding-right: 0.3em;
-  text-align: right;
 }
 
 table a {
