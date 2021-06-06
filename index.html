@@ -33,6 +33,14 @@
 			'index.html';
 
 			var mode = localStorage['mode']; // Gets current light/dark setting
+			
+			var table = document.getElementsByTagName('table')[0],
+			    rows = table.getElementsByTagName('tr'),
+			    text = 'textContent' in document ? 'textContent' : 'innerText';
+			
+			for (var i = 0, len = rows.length; i < len; i++) {
+				rows[i].children[0][text] = i + ': ' + rows[i].children[0][text];
+}
 
 			function swapStyleSheet(button) { // Swaps light/dark mode on button click
 				if (mode == "dark") {
@@ -162,7 +170,7 @@
 				My most recent script offer: <a href="https://www.reddit.com/r/gonewildaudio/comments/nkmzb3/script_offerf4m_your_hot_girlfriend_begs_you_for/" target="_blank">HERE</a><br>
 				If the script link on a script offer post isn't working - <a href="https://www.reddit.com/r/MyNameMadeYouSmiley/comments/kys539/update_if_the_link_on_a_script_offer_by_me_is/" target="_blank">Click Here</a></font>
 				<div class="table100">
-					<table class="order-table" cellpadding="0">
+					<table class="order-table">
 						<thead>
 							<tr class="table100-head">
 								<th class="column1">Script Title</th>
