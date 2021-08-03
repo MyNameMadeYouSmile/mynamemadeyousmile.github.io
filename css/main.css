@@ -48,6 +48,18 @@ body, html {
   text-align: center;
 }
 
+#requests {
+  background-color: #005730; /* Green background */
+  border: 1px solid #00331c; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  margin: 10px;
+  cursor: pointer; /* Pointer/hand icon */
+  width: 150px;
+  height: 60px;
+  text-align: center;
+}
+
 #topbuttons {
   position: absolute;
   top: 0;
