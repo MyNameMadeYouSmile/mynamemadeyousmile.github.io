@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>MyNameMadeYouSmiley's SFW Scripts</title> <!-- Change this to your username -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link id="pagestyle" rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
+
+	<!--===============================================================================================-->
+</head>
+
+<!-- Do not change anything inside the <head></head> tag other than the title. If you do, things will probably explode -->
+
+<body>
+	<script> // Script that creates all of the functional part of the page. Do not modify anything inside this tag unless you really know what you're doing
+		(function (document) {
+			'index.html';
+
+			var mode = localStorage['mode']; // Gets current light/dark setting
+
+			function swapStyleSheet(button) { // Swaps light/dark mode on button click
+				if (mode == "dark") {
+					document.getElementById("pagestyle").setAttribute("href", "css/mainlight.css");
+					mode = "light";
+					localStorage['mode'] = 'light';
+					button.innerHTML = "Dark Mode";
+				}
+
+				else if (mode == "light") {
+					document.getElementById("pagestyle").setAttribute("href", "css/main.css");
+					mode = "dark";
+					localStorage['mode'] = 'dark';
+					button.innerHTML = "Light Mode";
+				}
+			}
+
+			function keepStyleSheet(button) { // Decides if the site will be on light or dark theme depending on the previous setting
+				if (mode == "light") {
+					document.getElementById("pagestyle").setAttribute("href", "css/mainlight.css");
+					mode = "light";
+					localStorage['mode'] = 'light';
+					button.innerHTML = "Dark Mode";
+				}
+
+				else if (mode == "dark") {
+					document.getElementById("pagestyle").setAttribute("href", "css/main.css");
+					mode = "dark";
+					localStorage['mode'] = 'dark';
+					button.innerHTML = "Light Mode";
+				}
+
+				$('td').each(function () { // Marks Age, Beast and Rape tags as red. If you don't want this feature, delete everything from the $
+					$(this).html(
+						$(this).html()
+							.replace(
+								/(?<!-)(\[\brape\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+							.replace(
+								/(?<!-)(\[\bage\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+							.replace(
+								/(?<!-)(\[\bbeast\b\])(?!([^<]+)?>)(?!-)/ig,
+								'<span style="color:#ff4747;">$1</span>'
+							)
+					);
+				}); // Until here. If you want to mark other tags as red too, add more replaces after the last one and switch the word between the /b's for
+				// the one you want
+			}
+
+			var LightTableFilter = (function (Arr) {
+
+				var _input;
+
+				function _onInputEvent(e) { // A lot of stuff to make the table filter work
+					_input = e.target;
+					var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+					Arr.forEach.call(tables, function (table) {
+						Arr.forEach.call(table.tBodies, function (tbody) {
+							Arr.forEach.call(tbody.rows, _filter);
+						});
+					});
+				}
+
+				function _filter(row) {
+					var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+					row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+				}
+
+				return {
+					init: function () {
+						var inputs = document.getElementsByClassName('light-table-filter');
+						Arr.forEach.call(inputs, function (input) {
+							input.oninput = _onInputEvent;
+						});
+					}
+				};
+			})(Array.prototype);
+
+			document.addEventListener('readystatechange', function () { // Adds table filter, event listeners and calls the initial page settings
+				if (document.readyState === 'complete') {
+					LightTableFilter.init();
+					var a = document.getElementById("modechange");
+					a.innerHTML = "Light Mode";
+					a.onclick = function () { swapStyleSheet(this); };
+
+					if (mode != "dark" && mode != "light") {
+						mode = "dark";
+						localStorage['mode'] = 'dark';
+					}
+
+					keepStyleSheet(a);
+
+
+				}
+			});
+
+		})(document);
+
+	</script>
+	<header>
+		<div id="topbuttons"><button name="modechange" id="modechange"></button><br>
+			<a href=index.html><button name="scriptsoraudios" id="scriptsoraudios">NSFW</button></a></div>
+	</header>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<h1>MyNameMadeYouSmiley's SFW Scripts</h1>
+				<div class="table100">
+					<table class="order-table"><br /><br />
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Script Title</th>
+								<th class="column2">Synopsis</th>
+								<th class="column3">Tags</th>
+								<th class="column4">Fills</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="column1"><a
+										href="https://www.reddit.com/r/pillowtalkaudio/comments/jliqsh/script_offera4a_you_can_do_this_i_know_you_can/" target="_blank">[A4A]
+										You Can Do This, I Know You Can</a> </td>
+								<td class="column2">
+									<p>Just some motivating and encouraging words for those who are going through some things and for those who have doubts about achieving their goals.</p>
+								</td>
+								<td class="column3">
+									<p><b>[Encouragement] [Motivation] [Comfort] [Reassurance] [Chase Your Dreams] [Don't Give Up] [You Got The Power] [Don't Let Anyone Tell You Otherwise] [SFW]</b></p>
+								</td>
+								<td class="column4"><a href="https://www.reddit.com/r/pillowtalkaudio/comments/jmcwp1/script_fillf4a_you_can_do_this_i_know_you_can/" target="_blank">AriellaContras</a><br><br>
+									<a
+									   	href="https://www.reddit.com/r/pillowtalkaudio/comments/jser6q/m4a_you_can_do_this_i_know_you_can_motivation/" target="_blank">MrFoxhoundAudio</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="column1"><a
+										href="https://www.reddit.com/r/pillowtalkaudio/comments/irjz9t/script_offerf4m_your_roommate_is_a_bloody_vampire/" target="_blank">[F4M]
+										Your Roommate Is a Bloody Vampire</a> </td>
+								<td class="column2">
+									<p>Thunderstorm woke you up late at night and you went to the kitchen for some snack. Your roommate happens to be there and spots you. 
+										You both talk for a little bit. Soon everything goes left.. and your roommate reveals her true self. 
+										She is hungry for blood again, but she don't want to hurt other people anymore.. so YOU will be her meal from now on.. and you have no choice at all, she's going to feed on you.</p>
+								</td>
+								<td class="column3">
+									<p><b>[Vampire] [ASMR] [Roommates] [SFX] [Thunderstorm] [Tape] [Tied To a Chair] [Biting] [Sucking Blood] [Losing Control] [Getting Drunk Off Of Your Blood] [Moaning] [AFTERCARE] [Kisses] [Shushing] [Helping You Fall Asleep] [SFW]</b></p>
+								</td>
+								<td class="column4"><a href="https://www.reddit.com/user/MonicaKellyAudio/comments/iyebv2/your_roommate_is_a_vampire_new_roleplay/" target="_blank">MonicaKellyAudio</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="column1"><a
+										href="https://www.reddit.com/r/GWAScriptGuild/comments/i8xft5/script_offera4a_you_will_get_through_this_anxiety/" target="_blank">[A4A]
+										You Will Get Through This</a> </td>
+								<td class="column2">
+									<p>You will get through this, just give yourself a chance. Try to think positive instead of negative. You are unique, beautiful and just good as you are. You don't need to try to fit in, you're good enough. Cuddle with me and leave the bad thoughts behind you for some time.</p>
+								</td>
+								<td class="column3">
+									<p><b>[Anxiety] [Depression] [Comforting] [Positivity] [Encouragement] [Ensuring] [You Are Good Enough] [You Are Beautiful] [Cuddles] [Rest With Me] [NO SEX]</b></p>
+								</td>
+								<td class="column4"><a
+									   	href="https://www.reddit.com/r/gonewildaudio/comments/i98yk1/m4a_you_will_get_through_this_anxiety_depression/" target="_blank">[M4A] thegentlegiantsounds</a><br><br>
+									<a
+									   	href="https://www.reddit.com/r/pillowtalkaudio/comments/ia0eig/f4a_you_will_get_through_this_comforting/" target="_blank">[F4A] POVscribe</a><br><br>
+									<a
+									   	href="https://www.reddit.com/r/pillowtalkaudio/comments/ibhi6o/m4a_script_fill_you_will_get_through_this/" target="_blank">[M4A] Rynosoar94</a><br><br>
+									<a
+									   	href="https://www.youtube.com/watch?v=rzylVaypr88" target="_blank">[F4A] BabyPinkASMR</a><br><br>
+									<a
+									   	href="https://www.reddit.com/r/gonewildaudio/comments/is6swh/script_fill_a4a_you_will_get_through_this_anxiety/" target="_blank">[F4M] Vixumii</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="column1"><a
+										href="https://www.reddit.com/r/GonewildAudible/comments/cquzls/script_offerf4m_dont_kill_yourself_dont_do_it_to/" target="_blank">[F4M]
+										Don't kill yourself, don't do it to me</a> </td>
+								<td class="column2">
+									<p>Your friend knows you're depressed and she knows how tough it can get sometimes... 
+										but remember you always got her to hear you out and help you with your problems.</p>
+								</td>
+								<td class="column3">
+									<p><b>[Depression] [Anxiety] [Comforting] [Advices] [Friends] [Cuddles] [No Sex] [SFW]</b></p>
+								</td>
+								<td class="column4"><font color="#FF0000">None Yet</font>
+								</td>
+							</tr>
+							<tr>
+								<td class="column1"><a
+										href="https://pastebin.com/f1nUZGtP" target="_blank">[F4A] Crying is okay</a> </td>
+								<td class="column2">
+									<p>Your girlfriend knows you're stressed and knows what you're going through.
+									She lets you know that crying is okay and encourages you to do it while she comforts you.</p>
+								</td>
+								<td class="column3">
+									<p><b>[Girlfriend] [Anxiety] [Comforting] [Shushing] [Kisses] [Ear Licking] [No Sex] [SFW]</b></p>
+								</td>
+								<td class="column4"><a
+										       href="https://youtu.be/MCNQ-njtJdQ" target="_blank">BabyPinkASMR</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		Template developed by AngelMain
+	</footer>
+
+
+	<!-- For the love of god don't change those-->
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
